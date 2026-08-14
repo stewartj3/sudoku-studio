@@ -68,8 +68,8 @@ h1 { font-family: 'Playfair Display', serif; font-size: clamp(29px, 3.3vw, 45px)
 h1 span { color: var(--sage); font-style: italic; font-weight: 600; }
 .game-meta { display: flex; align-items: flex-end; gap: 18px; }
 .game-meta label { align-self: center; font-size: 9px; letter-spacing: .15em; font-weight: 700; color: var(--muted); margin-right: -7px; }
-.select { height: 38px; border: 1px solid var(--fine-line); border-radius: 5px; background: var(--surface); padding: 0 13px; display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; cursor: pointer; }
-.select svg { width: 14px; margin-left: 10px; }
+.rating-badge { min-width: 85px; height: 38px; border: 1px solid var(--fine-line); border-radius: 5px; background: var(--surface); padding: 0 13px; display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; animation: rating-refresh .35s ease-out; }
+@keyframes rating-refresh { from { transform: scale(.96); background: var(--sage-pale); } to { transform: scale(1); background: var(--surface); } }
 .dot { width: 7px; height: 7px; border-radius: 50%; background: #cf9a58; }
 .dot.easy { background: #79a374; } .dot.hard { background: #bb5b49; }
 .timer { height: 38px; min-width: 112px; border-left: 1px solid var(--fine-line); display: flex; align-items: center; justify-content: flex-end; gap: 12px; font-variant-numeric: tabular-nums; font-size: 17px; font-weight: 600; }
@@ -121,6 +121,14 @@ h1 span { color: var(--sage); font-style: italic; font-weight: 600; }
 .check svg, .new-game svg { width: 16px; }
 .new-game { margin-top: 10px; border: 1px solid var(--fine-line); background: transparent; color: var(--muted); }
 .message { margin: 10px 0 0; text-align: center; color: var(--rust); font-family: 'Playfair Display', serif; font-size: 13px; }
+.seed-control { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--fine-line); }
+.seed-control > label { display: block; margin-bottom: 7px; color: var(--muted); font-size: 8px; font-weight: 700; letter-spacing: .15em; }
+.seed-control > div { display: grid; grid-template-columns: 1fr auto; }
+.seed-control input { min-width: 0; height: 39px; padding: 0 11px; border: 1px solid var(--fine-line); border-right: 0; border-radius: 5px 0 0 5px; outline: none; background: var(--surface); color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.seed-control input:focus { border-color: var(--sage); box-shadow: 0 0 0 2px color-mix(in srgb, var(--sage) 22%, transparent); }
+.seed-control > div button { height: 39px; padding: 0 14px; border: 0; border-radius: 0 5px 5px 0; background: var(--sage); color: white; cursor: pointer; font-size: 10px; font-weight: 700; }
+.seed-control small { display: block; margin-top: 7px; color: var(--muted); font-size: 8px; line-height: 1.45; }
+.seed-control small strong { color: var(--ink); }
 
 footer { min-height: 60px; width: min(1160px, calc(100% - 48px)); margin: 0 auto; border-top: 1px solid var(--fine-line); display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; color: var(--muted); font-size: 9px; }
 .footer-center { text-align: center; font-family: 'Playfair Display', serif; font-style: italic; font-size: 11px; }
